@@ -1,0 +1,46 @@
+@mixin clearfix {
+    &::after
+    {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    // overflow: hidden;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:           Phone
+600px - 900px:       Tablet portrait        
+900px - 1200px:      Tablet landscape
+[1200px - 1800px]:   is where our normal style apply >>>>>> (no media queries will be applied)
+1200px + :           Big desktop
+
+$break-point argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px (browser's default font-size)
+*/
+@mixin respond($break-point) {   // em and rem are not affected by root font-size in media queries, but em is better
+    @if($break-point == phone)
+    {
+        @media only screen and (max-width: 37.5em){@content}; // <= 600px
+    }
+    @if($break-point == tab-port)
+    {
+        @media only screen and (max-width: 56.25em){@content}; // <= 900px
+    }
+    @if($break-point == tab-land)
+    {
+        @media only screen and (max-width: 75em){@content};   // <= 1200px
+    }
+    @if($break-point == big-desktop)
+    {
+        @media only screen and (min-width: 112.5em){@content}; // <= 1800px
+    }
+}
