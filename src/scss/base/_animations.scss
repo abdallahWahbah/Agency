@@ -32,12 +32,22 @@
 {
     0%
     {
-        transform: translateY(3rem);
+        transform: translateY(3rem) rotateY(120deg) ;
         opacity: 0;
     }
     100%
     {
-        transform: translateY(0);
+        transform: translateY(0) rotateY(0);
         opacity: 1;
     }
 }
+@keyframes shrink 
+{
+    0% {
+      background-size: 110% 110%;
+    }
+    100% {
+      background-size: 100% 100%;
+    }
+}
+

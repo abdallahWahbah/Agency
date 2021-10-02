@@ -40,8 +40,8 @@ const slideWork = ()=>
     goToSlide(0);
 
     // Event handlers
-    btnRight.addEventListener("click",nextSlide);
-    btnLeft.addEventListener("click",prevSlide);
+    btnRight.addEventListener("click", nextSlide);
+    btnLeft.addEventListener("click", prevSlide);
 
     // Keyboard right and left arrow
     document.addEventListener("keydown", (e)=>
@@ -56,9 +56,40 @@ const slideWork = ()=>
         {
             if(e.style.transform === `translateX(0%)`)
             {
-                console.log(e);
+                // Effect (move left) when you move to slide 1
+                if(e.classList.contains("slide--1") )
+                {
+                    // console.log(e);
+                    // console.log(e.querySelector(".slider__typo"));
+                    e.querySelector(".slider__typo").style.animation ="moveBottomToTop 2s"
+                }
+                else 
+                {
+                    document.querySelector(".slide--1").querySelector(".slider__typo").style.animation = "none";
+                }
+
+                // Effect (move left) when you move to slide 2
+                if(e.classList.contains("slide--2") )
+                {
+                    e.querySelector(".slider__typo").style.animation ="moveRightToLeft 2s"
+                }
+                else 
+                {
+                    document.querySelector(".slide--2").querySelector(".slider__typo").style.animation = "none";
+                }
+                // Effect (move up) when you move to slide 3
+                if(e.classList.contains("slide--3") )
+                {
+                    e.querySelector(".slider__typo").style.animation ="moveLeftToRight 2s"
+                }
+                else 
+                {
+                    document.querySelector(".slide--3").querySelector(".slider__typo").style.animation = "none";
+                }
+                // You can refactor these if-else statements by making a func and call it 3 time and pass className and the animatio ... but I won't do it now
             }
         })
     }
 }
 slideWork();
+
