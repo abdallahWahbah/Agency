@@ -31,4 +31,14 @@ body
     line-height: 1.7;
     box-sizing: border-box;
     background-color: $color-white;
+
+    & > *
+    { 
+        padding: $padding__right__left__medium; //0 6rem;
+
+        @include respond(tab-port)
+        {
+            padding: $padding__right__left__small; //0 4rem;
+        }
+    }
 }

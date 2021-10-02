@@ -1,6 +1,6 @@
 .navigation
 {
-    padding: $padding__right__left__medium;
+    // padding: $padding__right__left__medium;
     padding-top: 3rem;
     padding-bottom: 3rem;
     box-shadow: 0 1rem 4rem rgba($color-black, .1);
@@ -18,7 +18,7 @@
 
     @include respond(tab-port)
     {
-        padding: $padding__right__left__small;
+        // padding: $padding__right__left__small;
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
     }
@@ -29,7 +29,7 @@
         padding-bottom: 2rem;
         max-height: 6rem;
         box-shadow: none;
-        position: relative;
+        // position: relative; // i don't remember why i did it like so, but i commented it to make the navigation sticky ... guess what! it worked with no error .. i think it's because that the body is the relative one above it
         border-bottom: 1px solid $color-grey-light-2;
     }
 
