@@ -28,22 +28,16 @@ const slideWork = ()=>
         if(curSlide === maxSlides - 1) curSlide = 0;
         else curSlide++;
         goToSlide(curSlide);
-        // activateDot(curSlide);
+        effect();
     };
     const prevSlide = () =>
     {
         if(curSlide === 0) curSlide = maxSlides - 1;
         else curSlide--;
         goToSlide(curSlide);
-        // activateDot(curSlide);
+        effect();
     };
-    const init =() =>
-    {
-        goToSlide(0);
-        // createDots();
-        // activateDot(0);
-    }
-    init();
+    goToSlide(0);
 
     // Event handlers
     btnRight.addEventListener("click",nextSlide);
@@ -55,5 +49,16 @@ const slideWork = ()=>
         if(e.key === "ArrowLeft") prevSlide();
         else if (e.key === "ArrowRight") nextSlide();
     });
+
+    const effect = ()=>
+    {
+        slides.forEach(e =>
+        {
+            if(e.style.transform === `translateX(0%)`)
+            {
+                console.log(e);
+            }
+        })
+    }
 }
 slideWork();
