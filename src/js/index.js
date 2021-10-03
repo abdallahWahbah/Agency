@@ -119,7 +119,6 @@ const drop = () =>
             icons.forEach(icon =>
             {
                 icon.classList.toggle("icon--active");
-                // console.log(icon);
             });
 
             // change header background-color
@@ -135,3 +134,26 @@ const drop = () =>
     });
 }
 drop();
+
+// Counting numbers
+const countNumbers = ()=>
+{
+    const numberContainers = Array.from(document.querySelectorAll(".number__item--number"));
+    numberContainers.forEach(cont =>
+    {
+        let counter = 0, num = +cont.textContent;
+        cont.textContent = "0";
+        if(num > 300) counter = 300; // to facilitate counting big numbers
+        const count = setInterval(()=>
+        {
+            counter++;
+            cont.textContent = `${counter}`;
+            if(counter >= num)
+            {
+                clearInterval(count);
+                // console.log(counter)
+            }
+        }, 10);
+    });
+};
+countNumbers();
