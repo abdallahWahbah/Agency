@@ -93,3 +93,45 @@ const slideWork = ()=>
 }
 slideWork();
 
+
+
+
+// Skills line percentage 
+const percentages = Array.from(document.querySelectorAll(".skills__perc"));
+percentages.forEach(el =>
+{
+   const perc = el.textContent;
+   //console.log(perc);
+   el.parentElement.nextElementSibling.querySelector(".skills__progress").style.width = `${perc}`;
+});
+
+
+// choosing functionality (drop down paragraphs)
+const drop = () =>
+{
+    const headers = Array.from(document.querySelectorAll(".choose__item--header"));
+    headers.forEach(header =>
+    {
+        header.addEventListener("click", ()=>
+        {
+            // change plus to minus and visa verce
+            const icons = header.querySelectorAll(".choose__item--header-icon");
+            icons.forEach(icon =>
+            {
+                icon.classList.toggle("icon--active");
+                // console.log(icon);
+            });
+
+            // change header background-color
+            header.classList.toggle("header__background__color");
+            console.log(header);
+
+            // show the paragraph
+            const paragraph = header.nextElementSibling;
+            console.log(paragraph);
+            paragraph.classList.toggle("show__paragraph");
+        });
+        
+    });
+}
+drop();
