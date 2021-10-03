@@ -34,11 +34,11 @@ body
 
     & > *
     { 
-        padding: $padding__right__left__medium; //0 6rem;
+        padding: 6rem; //$padding__right__left__medium; //0 6rem;
 
         @include respond(tab-port)
         {
-            padding: $padding__right__left__small; //0 4rem;
+            padding: 4rem; //$padding__right__left__small; //0 4rem;
         }
     }
 }

@@ -80,7 +80,7 @@
             height: 2px;
             display: inline-block;
             background: $color-grey-dark-3;
-            
+            // backface-visibility: hidden;
         }
         &::before, &::after
         {
@@ -101,12 +101,14 @@
     &__checkbox:checked + &__button &__icon, 
     &__checkbox:checked + &__button &__icon 
     {background: transparent;}
+
     &__checkbox:checked + &__button &__icon::before, 
     &__checkbox:checked + &__button &__icon::before
     {
         top: 0;
         transform: rotate(135deg);
     }
+
     &__checkbox:checked + &__button &__icon::after, 
     &__checkbox:checked + &__button &__icon::after
     {
