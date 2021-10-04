@@ -7,11 +7,11 @@ document.querySelector(".navigation").addEventListener("click", e =>
 });
 
 // Slider
-const slideWork = ()=>
+const slideWork = (className)=>
 {
-    const slides = document.querySelectorAll(".slide");
-    const btnLeft = document.querySelector(".slider__btn--left");
-    const btnRight = document.querySelector(".slider__btn--right");
+    const slides = document.querySelectorAll(`.${className}`);
+    // const btnLeft = document.querySelector(".slider__btn--left");
+    // const btnRight = document.querySelector(".slider__btn--right");
 
     let curSlide = 0;
     let maxSlides = slides.length;
@@ -28,6 +28,7 @@ const slideWork = ()=>
         if(curSlide === maxSlides - 1) curSlide = 0;
         else curSlide++;
         goToSlide(curSlide);
+        if(className === "js__slide__testimonial") return; // don't apply the effect on the testimonial slider
         effect();
     };
     const prevSlide = () =>
@@ -35,20 +36,31 @@ const slideWork = ()=>
         if(curSlide === 0) curSlide = maxSlides - 1;
         else curSlide--;
         goToSlide(curSlide);
+        if(className === "js__slide__testimonial") return; // don't apply the effect on the testimonial slider
         effect();
     };
     goToSlide(0);
 
     // Event handlers
-    btnRight.addEventListener("click", nextSlide);
-    btnLeft.addEventListener("click", prevSlide);
+    // btnRight.addEventListener("click", nextSlide);
+    // btnLeft.addEventListener("click", prevSlide);
+
+    slides.forEach(el => 
+    {
+        const left = el.parentElement.querySelector(".slider__btn--left");
+        const right = el.parentElement.querySelector(".slider__btn--right");
+        left.addEventListener("click", prevSlide);
+        right.addEventListener("click", nextSlide);
+    });
+
+
 
     // Keyboard right and left arrow
-    document.addEventListener("keydown", (e)=>
-    {
-        if(e.key === "ArrowLeft") prevSlide();
-        else if (e.key === "ArrowRight") nextSlide();
-    });
+    // document.addEventListener("keydown", (e)=>
+    // {
+    //     if(e.key === "ArrowLeft") prevSlide();
+    //     else if (e.key === "ArrowRight") nextSlide();
+    // });
 
     const effect = ()=>
     {
@@ -91,7 +103,8 @@ const slideWork = ()=>
         })
     }
 }
-slideWork();
+slideWork("js__slide__header");
+slideWork("js__slide__testimonial");
 
 
 

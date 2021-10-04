@@ -158,12 +158,16 @@
             visibility: hidden;
             display: block;
             transition: max-height .2s ease-in-out;
+            @include respond(phone)
+            {
+                width: 100%;
+            }
         }
 
         .show__paragraph
         {
             visibility: visible;
-            max-height: 20rem;
+            max-height: 35rem;
             padding: 2rem 3rem;
         }
     }

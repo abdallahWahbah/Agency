@@ -169,12 +169,29 @@
 .section__numbers
 {
     display: flex;
+    
     justify-content: space-between;
 
+    @include respond(tab-port){flex-wrap: wrap;}
     .number__item
     {
         display: flex;
         align-items: center;
+
+        @include respond(tab-port)
+        {
+            flex: 0 1 50%;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+            &:last-of-type,
+            &:nth-child(3)
+            {margin-bottom: 0;}
+        }
+        @include respond(phone)
+        {
+            flex: 0 1 100%; 
+            &:not(:last-of-type){margin-bottom: 2rem !important;}
+        }
 
         &--icon-container
         {
@@ -209,4 +226,90 @@
             letter-spacing: 1px;
         }
     }
+}
+
+.section__testimonials
+{
+    background-image: linear-gradient(rgba($color-black, .7), rgba($color-black, .7)), url('../img/meeting.jfif');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding: 0;
+
+    & > *
+    { 
+        padding: 6rem;
+
+        @include respond(tab-port)
+        {
+            padding: 4rem;
+        }
+    }
+
+    .heading__secondary--container{padding-bottom: 0;}
+
+    .slider
+    {
+        height: 60vh;
+        z-index: 1111;
+        color: white;
+        padding: 0;
+        // background-color: red;
+
+        & > *{background: none;}
+        .slide
+        {
+            height: auto;
+            &:hover .slider__typo
+            {
+                transform: translateX(0);
+            }
+        }
+        &__typo
+        {
+            margin-top: 4rem;
+        }
+        &__btn
+        {
+            top: auto;
+            bottom: -5%;
+            &--left{left: 45%;}
+            &--right{right: 45%;}
+
+            @include respond(tab-land){bottom: 0;}
+            @include respond(tab-port) {bottom: 5%;}
+            @include respond(phone) {bottom: -5%;}
+        }
+    }
+
+    .testimonial
+    {
+        &__paragraph
+        {
+            width: 50%;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+
+            @include respond(tab-land) {width: 60%; font-size: 1.7rem;}
+        }
+        &__image
+        {
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            border: 2px solid $color-white;
+            margin: 4rem 0 1rem 0;
+        }
+        &__name
+        {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+    
 }
