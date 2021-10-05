@@ -1,3 +1,7 @@
+// for animations
+.slider{opacity: 0; animation-delay: .5s;}
+.slider.animate__animated{opacity: 1;}
+
 .header
 {
     height: 100vh;

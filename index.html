@@ -7,6 +7,7 @@
         <title>Agency</title>
 
         <!-- <link rel="stylesheet" href="src/scss/ionicons.min.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link rel="stylesheet" href="src/scss/icon-font.css">
         <link rel="stylesheet" href="src/scss/main.scss">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -14,6 +15,12 @@
 
     </head>
     <body>
+        
+
+
+        <!-- <h1 class="js__href">An animated element</h1> --> <!--see pages/home.scss first lines-->
+
+
         
         <!--layouts/navigation-->
         <div class="navigation">
@@ -26,12 +33,12 @@
                     <span class="navigation__icon">&nbsp;</span>
                 </label>
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#" class="navigation__link navigation__link--primary">Home</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Service</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Portfolio</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">team</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Testimonials</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
+                    <li class="navigation__item"><a href="#header" class="navigation__link navigation__link--primary">Home</a></li>
+                    <li class="navigation__item"><a href="#section__service" class="navigation__link">Service</a></li>
+                    <li class="navigation__item"><a href="#section__portfolio" class="navigation__link">Portfolio</a></li>
+                    <li class="navigation__item"><a href="#section__team" class="navigation__link">team</a></li>
+                    <li class="navigation__item"><a href="#section__testimonials" class="navigation__link">Testimonials</a></li>
+                    <li class="navigation__item"><a href="#section__contact" class="navigation__link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -42,7 +49,7 @@
 
 
         <!--comp/slider-->
-        <header class="header">
+        <header class="header" id="header">
             <div class="slider">
                 <div class="slide js__slide__header slide--1">
                     <div class="slider__typo">
@@ -76,30 +83,30 @@
 
 
 
-        <!--layouts/service - base/typo -->
-        <section class="section__service">
+        <!--layouts/service, base/typo -->
+        <section class="section__service" id="section__service">
             <div class="heading__secondary--container">
                 <h2 class="heading__secondary">These are our services</h2>
                 <p class="heading__secondary--paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio impedit nulla provident porro necessitatibus minima magnam, nisi ullam non soluta natus eveniet quasi mollitia hic reiciendis totam quia laborum dicta.</p>
             </div>
 
             <div class="service__container">
-                <div class="service">
+                <div class="service js__service--animation">
                     <i class="icon-basic-display service__icon"></i>
                     <h3 class="service__heading">Web design</h3>
                     <p class="service__paragraph">On at tolerably depending do perceived. Luckily eat joy see own shyness minuter. So before remark at depart Did son unreserved.</p>
                 </div>
-                <div class="service">
+                <div class="service js__service--animation">
                     <i class="icon-basic-video service__icon"></i>
                     <h3 class="service__heading">Video production</h3>
                     <p class="service__paragraph">Have spot part for his quit may. Enable it is square my an regard. Often merit stuff first oh up hills as his memorey got null in recording.</p>
                 </div>
-                <div class="service">
+                <div class="service js__service--animation">
                     <i class="icon-basic-flag1 service__icon"></i>
                     <h3 class="service__heading">Advertising</h3>
                     <p class="service__paragraph">There spoke happy for you are out. Fertile how old address did showing because sitting replied six. Luckily eat joy see own shyness minuter.</p>
                 </div>
-                <div class="service">
+                <div class="service js__service--animation">
                     <i class="icon-basic-postcard-multiple service__icon"></i>
                     <h3 class="service__heading">Branding</h3>
                     <p class="service__paragraph">So striking at of to welcomed . Northward by described up household therefore attention. Excellence decisively nay man yet impress.</p>
@@ -113,16 +120,16 @@
 
 
         <!--layouts/portfolio-->
-        <section class="section__portfolio">
+        <section class="section__portfolio" id="section__portfolio">
             <div class="heading__secondary--container">
                 <h2 class="heading__secondary">Portfolio</h2>
             </div>
             <div class="portfolio__cat">
-                <a href="#" class="portfolio__cat--link portfolio__cat--link-1">All</a>
-                <a href="#" class="portfolio__cat--link portfolio__cat--link-2">Graphic</a>
+                <a href="#" class="portfolio__cat--link portfolio__cat--link-1 js__port--animation--left">All</a>
+                <a href="#" class="portfolio__cat--link portfolio__cat--link-2 js__port--animation--left">Graphic</a>
                 <a href="#" class="portfolio__cat--link portfolio__cat--link-3">Web design</a>
-                <a href="#" class="portfolio__cat--link portfolio__cat--link-4">Branding</a>
-                <a href="#" class="portfolio__cat--link portfolio__cat--link-5">Video</a>
+                <a href="#" class="portfolio__cat--link portfolio__cat--link-4 js__port--animation--right">Branding</a>
+                <a href="#" class="portfolio__cat--link portfolio__cat--link-5 js__port--animation--right">Video</a>
             </div>
 
             <div class="portfolio__items">
@@ -186,13 +193,13 @@
             <div class="grow">
                 <div class="grow__left">
                     <div class="grow__left--content">
-                        <p class="grow__left--content-paragraph">Calling observe for who pressed raising his. Can connection instrument astonished unaffected his motionless preference. Announcing say boy precaution unaffected.Do to be agreeable conveying oh assurance. Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the. Abode stuff noisy manor blush yet the far.</p>
-                        <p class="grow__left--content-paragraph">Up colonel so between removed so do. Years use place decay sex worth drift age. Men lasting out end article express fortune demands own charmed. About are are money ask how seven.</p>
+                        <p class="grow__left--content-paragraph js--animation--left">Calling observe for who pressed raising his. Can connection instrument astonished unaffected his motionless preference. Announcing say boy precaution unaffected.Do to be agreeable conveying oh assurance. Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the. Abode stuff noisy manor blush yet the far.</p>
+                        <p class="grow__left--content-paragraph js--animation--left">Up colonel so between removed so do. Years use place decay sex worth drift age. Men lasting out end article express fortune demands own charmed. About are are money ask how seven.</p>
                         <a href= "#"class="slider__view grow__left--button">View projects</a>
                     </div>
                 </div>
                 <div class="grow__right">
-                    <img src="./src/img/sample1.png" alt="Image" class="grow__right--image">
+                    <img src="./src/img/sample1.png" alt="Image" class="grow__right--image js--animation--right">
                 </div>
             </div>
         </section>
@@ -227,13 +234,13 @@
         <!--see the documentation here on how to use ionicons v5 https://github.com/ionic-team/ionicons then open Ionicons Homepage in the realated section-->
         <!--i embedded the link of the script below instead of including the css and font files-->
         <!--layouts/team-->
-        <section class="section__team">
+        <section class="section__team" id="section__team">
             <div class="heading__secondary--container">
                 <h2 class="heading__secondary">Team members</h2>
                 <p class="heading__secondary--paragraph">Resolution possession discovered surrounded advantages has but few add. Yet walls times spoil put. Be it reserved contempt rendered smallest. Studied to passage it mention calling believe an.</p>
             </div>
             <div class="team">
-                <div class="team__member">
+                <div class="team__member js--animation--zoomin">
                     <img src="./src/img/team-5.jfif" alt="Member 1" class="team__member--img">
                     <div class="team__slide">
                         <ion-icon class="team__slide--link" name="logo-facebook"></ion-icon>
@@ -245,7 +252,7 @@
                         <h5 class="team__member--info-job">Director</h5>
                     </div>
                 </div>
-                <div class="team__member">
+                <div class="team__member js--animation--zoomin">
                     <img src="./src/img/team-6.jfif" alt="Member 1" class="team__member--img">
                     <div class="team__slide">
                         <ion-icon class="team__slide--link" name="logo-facebook"></ion-icon>
@@ -257,7 +264,7 @@
                         <h5 class="team__member--info-job">Creative Director</h5>
                     </div>
                 </div>
-                <div class="team__member">
+                <div class="team__member js--animation--zoomin">
                     <img src="./src/img/team-7.jfif" alt="Member 1" class="team__member--img">
                     <div class="team__slide">
                         <ion-icon class="team__slide--link" name="logo-facebook"></ion-icon>
@@ -269,7 +276,7 @@
                         <h5 class="team__member--info-job">Marketing</h5>
                     </div>
                 </div>
-                <div class="team__member">
+                <div class="team__member js--animation--zoomin">
                     <img src="./src/img/team-9.jfif" alt="Member 1" class="team__member--img">
                     <div class="team__slide">
                         <ion-icon class="team__slide--link" name="logo-facebook"></ion-icon>
@@ -291,7 +298,7 @@
         
         <!--layouts/skills-->
         <section class="section__skills__whychoose">
-            <div class="skills">
+            <div class="skills js--animation--left">
                 <h3 class="skills__header">Our skills</h3>
                 <ul class="skills__list">
                     <li class="skills__item">
@@ -330,7 +337,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="choose">
+            <div class="choose js--animation--right">
                 <h3 class="skills__header">Why to choose us</h3>
                 <ul class="choose__list">
                     <li class="choose__item">
@@ -410,7 +417,7 @@
 
 
         <!--pages/home, comp/slider(no new)-->
-        <section class="section__testimonials">
+        <section class="section__testimonials" id="section__testimonials">
             <div class="heading__secondary--container">
                 <h2 class="heading__secondary">Testimonials</h2>
             </div>
@@ -524,13 +531,13 @@
 
 
         <!--comp/form-->
-        <section class="section__contact">
+        <section class="section__contact" id="section__contact">
             <div class="heading__secondary--container">
                 <h2 class="heading__secondary">Contact</h2>
                 <p class="heading__secondary--paragraph">Bed sincerity yet therefore forfeited Bed sincerity yet therefore forfeited his certainty neglected questions. Pursuit chamber as elderly amongst on. Distant however warrant farther to of.</p>
             </div>
             <div class="contact">
-                <form action="#" class="contact__form">
+                <form action="#" class="contact__form js--animation--left">
                     <div class="contact__form--two--items">
                         <input type="text" class="contact__form--input" name="name" placeholder="Your Name:*">
                         <input type="email" class="contact__form--input" name="email" placeholder="E-mail:*">
@@ -538,7 +545,7 @@
                     <textarea name="textarea" class="contact__form--text--area" placeholder="Your message"></textarea>
                     <button class="slider__view">Submit</button>
                 </form>
-                <div class="contact__info">
+                <div class="contact__info js--animation--right">
                     <p class="contact__info--paragraph">Spring formal no county ye waited. My whether cheered at regular it of promise blushes perhaps.</p>
                     <div class="contact__info--item">
                         <ion-icon class="contact__info--icon" name="navigate"></ion-icon> 
@@ -594,6 +601,7 @@
         </footer>
 
 
+        <script src="src/js/noframework.waypoints.min.js"></script>
         <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
         <script src="src/js/index.js"></script>
     </body>

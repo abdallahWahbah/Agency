@@ -1,3 +1,9 @@
+// for animations
+.heading__secondary{opacity: 0;}
+.heading__secondary.animate__animated{opacity: 1;}
+.heading__secondary--paragraph{opacity: 0;}
+.heading__secondary--paragraph.animate__animated{opacity: 1;}
+
 .heading__primary--main, .heading__primary--sub
 {
     text-transform: uppercase;
@@ -84,50 +90,3 @@
         }
     }
 }
-
-// .heading-secondary
-// {
-//     font-size: 3.5rem;
-//     font-weight: 700;
-//     text-transform: uppercase;
-//     letter-spacing: .2rem;
-//     display: inline-block;
-//     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-//     -webkit-background-clip: text;
-//     background-clip: text;
-//     color: transparent;
-//     transition: all .2s ease-in-out;
-    
-//     @include respond(tab-port)
-//     {
-//         font-size: 3rem;
-//     }
-//     @include respond(phone)
-//     {
-//         font-size: 2.5rem;
-//     }
-
-//     &:hover
-//     {
-//         transform: skewY(2deg) skewX(15deg) scale(1.1);
-//         text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
-        
-//     }
-// }
-
-// .heading-tertiary
-// {
-//     font-size: 1.5rem;
-//     font-weight: 700;
-//     text-transform: uppercase;
-// }
-
-// .paragraph
-// {
-//     font-size: 1.6rem;
-
-//     &:not(:last-child)
-//     {
-//         margin-bottom: 3rem;
-//     }
-// }

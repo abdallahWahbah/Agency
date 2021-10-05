@@ -1,3 +1,10 @@
+// for animations
+.js__port--animation--left{opacity: 0;}
+.js__port--animation--left.animate__animated{opacity: 1;}
+.js__port--animation--right{opacity: 0;}
+.js__port--animation--right.animate__animated{opacity: 1;}
+
+
 .section__portfolio
 {
     background-color: $color-grey-light-1;

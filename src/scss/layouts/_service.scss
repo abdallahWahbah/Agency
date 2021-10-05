@@ -1,3 +1,7 @@
+// for animations
+.js__service--animation{opacity: 0;}
+.js__service--animation.animate__animated{opacity: 1;}
+
 .section__service
 {
     
@@ -34,7 +38,8 @@
             padding: 3rem 2rem;
             text-align: center;
             border-radius: 3px;
-            transition: transform .2s ease-in-out;
+            // transition: transform .2s ease-in-out;
+            // cursor: pointer;
 
             display: flex;
             flex-direction: column;
@@ -66,10 +71,10 @@
                 transform: scale(.9);
             }
 
-            &:hover
-            {
-                transform: translateY(-1.5rem) scale(1.05);
-            }
+            // &:hover
+            // {
+            //     transform: translateY(-1.5rem) scale(1.05);
+            // }
 
             &__icon
             {

@@ -1,3 +1,7 @@
+// document.querySelector(".js__href").classList.add("animate__bounce");
+//document.querySelector(".js__href").classList.add("animate__animated");
+
+
 // navidation on mobile mode
 document.querySelector(".navigation").addEventListener("click", e =>
 {
@@ -148,7 +152,7 @@ const drop = () =>
 }
 drop();
 
-// Counting numbers
+// Counting numbers when you reach the section
 const countNumbers = ()=>
 {
     const numberContainers = Array.from(document.querySelectorAll(".number__item--number"));
@@ -169,4 +173,144 @@ const countNumbers = ()=>
         }, 10);
     });
 };
-countNumbers();
+var waypoint = new Waypoint(
+{
+    element: document.querySelector(".section__numbers"),
+    handler: function(direction) {
+        if(direction === 'up') return;
+        countNumbers();
+        this.element.classList.add("animate__animated");
+        this.element.classList.add(`animate__zoomIn`);
+    },
+    offset: "75%"
+});
+// countNumbers();
+
+
+// Navigation smooth scrolling (when you click on a link in the navigation, go to it in a smooth way)
+
+// the following code is not working properly cause we need an offset in the top of the section so that the header of the sections is shown properly
+
+// document.querySelector(".navigation__list").addEventListener("click", e =>
+// {
+//     e.preventDefault();
+//     // console.log(e.target.classList.contains("navigation__link"));
+//     if(!e.target.classList.contains("navigation__link")) return;
+//     const id = e.target.getAttribute("href");
+//     // console.log(id);
+//     document.querySelector(`${id}`).scrollIntoView({behavior: "smooth", block: "start"});
+// });
+
+
+document.querySelector(".navigation__list").addEventListener("click", e =>
+{
+    e.preventDefault();
+    if(!e.target.classList.contains("navigation__link")) return;
+    const id = e.target.getAttribute("href");
+    const sectionCoords = document.querySelector(`${id}`).getBoundingClientRect();
+    window.scrollTo(
+    {
+      left: sectionCoords.left + window.pageXOffset,
+      top: sectionCoords.top + window.pageYOffset -45,
+      behavior: 'smooth'
+    }
+  );
+});
+
+
+
+// animations when you reach a section
+// http://imakewebthings.com/waypoints/guides/getting-started/
+// https://animate.style/#usage
+
+
+// header
+// var waypoint = new Waypoint(
+// {
+//     element: document.querySelector('.slider'),
+//     handler: function(direction) {
+//         this.element.classList.add("animate__animated");
+//         this.element.classList.add("animate__fadeIn");
+//     }
+// });
+
+// // services
+// var waypoint = new Waypoint(
+// {
+//     element: document.querySelector('.section__service'),
+//     handler: function(direction) {
+//         this.element.classList.add("animate__animated");
+//         this.element.classList.add("animate__bounceInUp");
+//     },
+//     offset: '75%' // if you wanted to write a number in px ... just write it with no '' and without 'px'
+// });
+
+// Heading secondary
+// document.querySelectorAll(".heading__secondary").forEach()
+
+const waypointWithAnimation = function(el, animation)
+{
+    var waypoint = new Waypoint(
+    {
+        element: el,
+        handler: function(direction) {
+            this.element.classList.add("animate__animated");
+            this.element.classList.add(`${animation}`);
+        },
+        offset: "75%"
+    });
+}
+// header
+document.querySelectorAll(".slider").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeIn');
+});
+
+// heading secondary
+document.querySelectorAll(".heading__secondary").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInDown');
+});
+
+// heading secondary paragraph
+document.querySelectorAll(".heading__secondary--paragraph").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInUp');
+});
+
+// service item
+document.querySelectorAll(".js__service--animation").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInUp');
+});
+
+// portfolio categoreis
+document.querySelectorAll(".js__port--animation--left").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInLeft');
+});
+document.querySelectorAll(".js__port--animation--right").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInRight');
+});
+
+// in general .. fade left
+document.querySelectorAll(".js--animation--left").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInLeft');
+});
+// in general .. fade right
+document.querySelectorAll(".js--animation--right").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInRight');
+});
+// in general .. fade up
+document.querySelectorAll(".js--animation--up").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__fadeInUp');
+});
+// in general .. zoom in
+document.querySelectorAll(".js--animation--zoomin").forEach(el =>
+{
+    waypointWithAnimation(el, 'animate__zoomIn');
+});
